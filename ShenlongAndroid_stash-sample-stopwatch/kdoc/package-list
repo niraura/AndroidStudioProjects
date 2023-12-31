@@ -1,0 +1,7 @@
+$dokka.format:gfm
+$dokka.linkExtension:md
+
+com.brother.mfc.shenlong
+com.brother.mfc.shenlong.model
+com.brother.mfc.shenlong.view
+com.brother.mfc.shenlong.viewmodel

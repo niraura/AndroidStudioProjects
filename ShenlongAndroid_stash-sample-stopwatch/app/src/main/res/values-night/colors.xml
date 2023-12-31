@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019 Brother Industries, Ltd.
+  -->
+
+<resources>
+    <color name="colorPrimary">#AF1A1A</color>
+    <color name="colorPrimaryDark">#790808</color>
+    <color name="colorAccent">#FF4949</color>
+    <color name="DarkBGText">#FFFFFF</color>
+    <color name="Background">#272020</color>
+</resources>

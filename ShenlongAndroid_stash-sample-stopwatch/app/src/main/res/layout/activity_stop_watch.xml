@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2019 Brother Industries, Ltd.
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".view.StopWatchActivity" android:id="@+id/layout2">
+
+    <data>
+
+        <variable
+                name="vm"
+                type="com.brother.mfc.shenlong.viewmodel.StopWatchViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:tag="layout/activity_stop_watch_0">
+
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/gradient" app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        />
+        <TextView
+                time="@{vm.timerCount}"
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/StopwatchText"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        />
+        <TextView
+                android:text="@string/wrap_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                style="@style/MediumText"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" android:layout_marginEnd="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingTop="8dp" android:paddingBottom="8dp" android:id="@+id/scrollView2"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        times="@{vm.wraps}"
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:visibility="visible" tools:text="00:00:00:00" android:textAlignment="center"
+                        android:textColor="@color/DarkBGText" style="@style/LargeText"
+                />
+            </LinearLayout>
+        </ScrollView>
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline" app:layout_constraintGuide_percent="0.6"
+        />
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/guideline3"
+                app:layout_constraintGuide_percent="0.8"/>
+        <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> vm.start()}"
+                android:text="@string/start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                style="@style/CircleButton"
+        />
+        <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> vm.stop()}"
+                android:text="@string/stop"
+                style="@style/CircleButton" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2" android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"/>
+        <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> vm.reset()}"
+                android:enabled="@{safeUnbox(vm.canReset)}"
+                android:text="@string/reset"
+                app:layout_constraintTop_toTopOf="@+id/guideline3" android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="@+id/button2"
+                android:layout_marginEnd="8dp" style="@style/NormalButton"/>
+
+        <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wrap"
+                android:onClick="@{() -> vm.wrap()}"
+                android:enabled="@{safeUnbox(vm.canWrap)}"
+                app:layout_constraintStart_toStartOf="@+id/button" app:layout_constraintEnd_toEndOf="@+id/button"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/NormalButton"/>
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline2" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="731dp"
+                app:layout_constraintGuide_percent="0.5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

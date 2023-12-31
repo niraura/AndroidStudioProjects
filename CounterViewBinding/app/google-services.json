@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "329802430180",
+    "project_id": "spacecounter-faab2",
+    "storage_bucket": "spacecounter-faab2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329802430180:android:226603f57420ecaed05ef1",
+        "android_client_info": {
+          "package_name": "com.example.counterfindbyid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4pjg6EdVe8GepgR4E-St9YuwU6CMBsLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

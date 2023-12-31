@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CounterFindById</string>
+    <string name="counterName">おそまつカウンター</string>
+    <string name="pluse">＋</string>
+    <string name="mainasu">－</string>
+</resources>

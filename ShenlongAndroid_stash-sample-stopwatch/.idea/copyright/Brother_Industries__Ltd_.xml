@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="keyword" value="Copyright $today.year Brother Industries, Ltd." />
+    <option name="notice" value="Copyright &amp;#36;today.year Brother Industries, Ltd." />
+    <option name="myName" value="Brother Industries, Ltd." />
+  </copyright>
+</component>
